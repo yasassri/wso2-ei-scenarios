@@ -8,6 +8,8 @@ FILE1=${DIR}/infrastructure.properties
 FILE2=${DIR}/testplan-props.properties
 PROP_KEY=keyFileLocation      #pem file
 PROP_HOST=WSO2PublicIP           #host IP
+PROP_PRODUCT_NAME=ProductName
+PROP_PRODUCT_VERSION=ProductVersion
 
 host=`grep -w "$PROP_HOST" ${FILE1} ${FILE2} | cut -d'=' -f2`
 key_pem=`grep -w "$PROP_KEY" ${FILE1} ${FILE2} | cut -d'=' -f2`
