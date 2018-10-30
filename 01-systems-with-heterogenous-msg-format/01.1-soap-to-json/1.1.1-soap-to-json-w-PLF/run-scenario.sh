@@ -15,7 +15,7 @@ PROP_REMOTE_DIR=REMOTE_WORKSPACE_DIR_UNIX
 host=`grep -w "$PROP_HOST" ${FILE1} ${FILE2} | cut -d'=' -f2`
 key_pem=`grep -w "$PROP_KEY" ${FILE1} ${FILE2} | cut -d'=' -f2`
 REM_DIR=`grep -w "$PROP_REMOTE_DIR" ${FILE1} ${FILE2} | cut -d'=' -f2`
-
+user='centos'
 
 get_product_home() {
     PRODUCT_NAME=`grep -w "$PROP_PRODUCT_NAME" ${FILE1} | cut -d'=' -f2`
@@ -31,4 +31,4 @@ cd $TEST_DIR
 mvn clean install
 
 scp -o StrictHostKeyChecking=no -r -i ${key_pem} ${user}@${host}:${PRODUCT_HOME}/repository/logs ${DIR}
-cp integration/mediation-tests/tests-service/target/surefire-reports ${DIR}
+cp -r integration/mediation-tests/tests-service/target/surefire-reports ${DIR}
