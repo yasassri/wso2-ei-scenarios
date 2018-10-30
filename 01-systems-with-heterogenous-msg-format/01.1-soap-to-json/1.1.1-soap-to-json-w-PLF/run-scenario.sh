@@ -10,9 +10,12 @@ PROP_KEY=keyFileLocation      #pem file
 PROP_HOST=WSO2PublicIP           #host IP
 PROP_PRODUCT_NAME=ProductName
 PROP_PRODUCT_VERSION=ProductVersion
+PROP_REMOTE_DIR=REMOTE_WORKSPACE_DIR_UNIX
 
 host=`grep -w "$PROP_HOST" ${FILE1} ${FILE2} | cut -d'=' -f2`
 key_pem=`grep -w "$PROP_KEY" ${FILE1} ${FILE2} | cut -d'=' -f2`
+REM_DIR=`grep -w "$PROP_REMOTE_DIR" ${FILE1} ${FILE2} | cut -d'=' -f2`
+
 
 get_product_home() {
     PRODUCT_NAME=`grep -w "$PROP_PRODUCT_NAME" ${FILE1} | cut -d'=' -f2`
