@@ -1166,7 +1166,7 @@ Resources:
     DependsOn:
       - WSO2EILoadBalancerSecurityGroup
 Outputs:
-  IntegratorCarbonURL:
+  WSO2PublicIP:
     Value: !Join
       - ''
       - - 'https://'
