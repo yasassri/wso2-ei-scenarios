@@ -38,7 +38,7 @@ wait_for_server_startup() {
     max_attempts=100
     attempt_counter=0
 
-    MGT_CONSOLE_URL=host
+    MGT_CONSOLE_URL=$host
     until $(curl -k --output /dev/null --silent --head --fail $MGT_CONSOLE_URL); do
        if [ ${attempt_counter} -eq ${max_attempts} ];then
         echo "Max attempts reached"
