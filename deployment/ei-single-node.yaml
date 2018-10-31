@@ -810,7 +810,7 @@ Outputs:
   ESBHttpUrl:
     Value: !Join
       - ''
-      - - 'https://'
+      - - 'http://'
         - !GetAtt
           - WSO2EILoadBalancer
           - DNSName
