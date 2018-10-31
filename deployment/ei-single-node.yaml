@@ -541,10 +541,6 @@ Resources:
       - PuppetMaster
   WSO2EINode1AutoScalingGroup:
     Type: 'AWS::AutoScaling::AutoScalingGroup'
-    CreationPolicy:
-      ResourceSignal:
-        Count: '1'
-        Timeout: PT60M
     Properties:
       LaunchConfigurationName: !Ref WSO2EINode1LaunchConfiguration
       DesiredCapacity: 1
