@@ -505,20 +505,20 @@ Resources:
             - fi
             - >-
               rm -rf
-              /usr/lib/wso2/wso2ei/6.4.0/wso2ei-6.4.0/wso2ei-6.4.0/repository/deployment/server
+              /usr/lib/wso2/wso2ei/6.4.0/wso2ei-6.4.0/repository/deployment/server
             - >-
               ln -s /mnt/efs/deployment/server
-              /usr/lib/wso2/wso2ei/6.4.0/wso2ei-6.4.0/wso2ei-6.4.0/repository/deployment/server
+              /usr/lib/wso2/wso2ei/6.4.0/wso2ei-6.4.0/repository/deployment/server
             - 'if [ ! -d "/mnt/efs/tenants" ]; then'
             - '    mkdir -p /mnt/efs/tenants'
-            - '    cp -r /usr/lib/wso2/wso2ei/6.4.0/wso2ei-6.4.0/wso2ei-6.4.0/repository/tenants /mnt/efs'
+            - '    cp -r /usr/lib/wso2/wso2ei/6.4.0/wso2ei-6.4.0/repository/tenants /mnt/efs'
             - fi
             - >-
               rm -rf
-              /usr/lib/wso2/wso2ei/6.4.0/wso2ei-6.4.0/wso2ei-6.4.0/repository/tenants
+              /usr/lib/wso2/wso2ei/6.4.0/wso2ei-6.4.0/repository/tenants
             - >-
               ln -s /mnt/efs/tenants
-              /usr/lib/wso2/wso2ei/6.4.0/wso2ei-6.4.0/wso2ei-6.4.0/repository/tenants
+              /usr/lib/wso2/wso2ei/6.4.0/wso2ei-6.4.0/repository/tenants
             - apt-get install -y python3-pip
             - pip3 install boto3
             - echo "${WSO2EIEFSFileSystem}:/ /mnt/efs efs defaults,_netdev 0 0" >> /etc/fstab
@@ -825,7 +825,6 @@ Outputs:
           - DNSName
         - ':8243'
     Description: ESB HTTPSURL
-
 Parameters:
   AWSAccessKeyId:
     Type: String
