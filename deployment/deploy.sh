@@ -27,7 +27,7 @@ DIR1=integration
 FILE1=${DIR}/infrastructure.properties
 FILE2=${DIR}/testplan-props.properties
 
-host="https"`grep -w "WSO2PublicIP" ${FILE1} ${FILE2} | cut -d'=' -f2 | cut -d'\' -f2`
+host="https"`grep -w "MgtConsoleUrl" ${FILE1} ${FILE2} | cut -d'=' -f2 | cut -d'\' -f2`
 
 CONNECT_RETRY_COUNT=20
 
