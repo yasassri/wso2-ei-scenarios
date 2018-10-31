@@ -49,3 +49,6 @@ wait_for_server_startup() {
         sleep 10
     done
 }
+
+wait_for_server_startup
+
