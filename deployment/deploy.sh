@@ -33,7 +33,7 @@ CONNECT_RETRY_COUNT=20
 
 ##script ends
 
-echo 'waiting for product'
+echo "waiting for product in $host"
 wait_for_server_startup() {
     max_attempts=100
     attempt_counter=0
