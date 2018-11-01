@@ -1,6 +1,6 @@
 #!/bin/bash
 
-repo='https://github.com/yasassri/product-dummy.git'
+repo='https://github.com/yasassri/product-ei-scenario-tests.git'
 TEST_DIR='product-dummy'
 DIR=$2
 export DATA_BUCKET_LOCATION=$DIR
