@@ -17,18 +17,13 @@ key_pem=`grep -w "$PROP_KEY" ${FILE1} ${FILE2} | cut -d'=' -f2`
 REM_DIR=`grep -w "$PROP_REMOTE_DIR" ${FILE1} ${FILE2} | cut -d'=' -f2`
 user='centos'
 
-get_product_home() {
-    PRODUCT_NAME=`grep -w "$PROP_PRODUCT_NAME" ${FILE1} | cut -d'=' -f2`
-    PRODUCT_VERSION=`grep -w "$PROP_PRODUCT_VERSION" ${FILE1} | cut -d'=' -f2`
-
-    echo $REM_DIR/storage/$PRODUCT_NAME-$PRODUCT_VERSION
-}
-
-PRODUCT_HOME=$(get_product_home)
-
 git clone $repo
 cd $TEST_DIR
 mvn clean install
 
-scp -o StrictHostKeyChecking=no -r -i ${key_pem} ${user}@${host}:${PRODUCT_HOME}/repository/logs ${DIR}
+Echo "Copying surefire-reports to data bucket"
+
 cp -r integration/mediation-tests/tests-service/target/surefire-reports ${DIR}
+ls ${DIR}
+
+
